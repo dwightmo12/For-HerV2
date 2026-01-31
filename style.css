@@ -1,0 +1,85 @@
+body, html {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+    font-family: 'Arial', sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+
+.background-image {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-image: url('Website\ Pic.jpeg'); 
+    background-size: cover;
+    background-position: center;
+    filter: blur(8px);
+    z-index: -1;
+    transform: scale(1.1);
+}
+
+.content-box {
+    text-align: center;
+    background: rgba(255, 255, 255, 0.2);
+    padding: 40px;
+    border-radius: 20px;
+    backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(15px);
+    border: 1px solid rgba(255, 255, 255, 0.4);
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);
+    width: 85%;
+    max-width: 400px;
+    z-index: 10;
+}
+
+h1 { color: #333; font-size: 1.8rem; margin-bottom: 25px; }
+
+button {
+    padding: 15px 35px;
+    font-size: 1.1rem;
+    margin: 10px;
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+#yesBtn { background-color: #ff4d6d; color: white; transition: 0.2s; }
+#yesBtn:hover { transform: scale(1.1); }
+
+/* The gliding effect for the No button */
+#noBtn { 
+    background-color: #e0e0e0; 
+    color: #333; 
+    transition: all 0.2s ease; 
+    position: relative; 
+    z-index: 11;
+}
+
+#hearts-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 1;
+}
+
+.heart {
+    position: absolute;
+    bottom: -20px;
+    color: #ff4d6d;
+    animation: moveUp 4s linear forwards;
+}
+
+@keyframes moveUp {
+    0% { transform: translateY(0) rotate(0deg); opacity: 1; }
+    100% { transform: translateY(-110vh) rotate(360deg); opacity: 0; }
+}
